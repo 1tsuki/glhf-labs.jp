@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GLHF</title>
-<meta name="description" content="GLHF（Good luck, have fun）は神奈川県足柄上郡松田町の個人事業。ジビエジャーキー「あしがらのしかにく」の販売と技術顧問を行う。">
-<meta property="og:title" content="GLHF — Good luck, have fun">
-<meta property="og:description" content="ジビエジャーキー「あしがらのしかにく」の販売と技術顧問を行う個人事業。">
+<meta name="description" content="GLHF は、B2B SaaS・B2C SaaS の CTO 経験をもとにした技術顧問。技術選定・設計の壁打ちから、開発体制の見直し、検証用のプロトタイプ開発まで支援する。">
+<meta property="og:title" content="GLHF — 技術顧問">
+<meta property="og:description" content="技術選定・設計の壁打ちから、開発体制の見直し、検証用のプロトタイプ開発まで。">
 <meta property="og:url" content="https://glhf-labs.jp/">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234e6b3a'/><text x='32' y='42' font-family='sans-serif' font-size='24' font-weight='700' fill='%23ffffff' text-anchor='middle'>GL</text></svg>">
@@ -19,95 +19,233 @@
     --bg: #f7f8f4;
     --card: #ffffff;
     --line: #d9dfd2;
+    --tint: #eef4e8;
   }
   * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--fg);
-    font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
-    line-height: 1.8;
+    font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    line-height: 1.9;
+    font-feature-settings: "palt";
   }
   a { color: var(--accent); }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
-  header.hero { padding: 96px 0 64px; }
-  .logo {
-    font-size: clamp(64px, 16vw, 128px);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 1;
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  /* header */
+  .site-header { border-bottom: 1px solid var(--line); }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-weight: 800; font-size: 20px; letter-spacing: 0.02em; color: var(--fg); text-decoration: none; }
+  .nav { display: flex; gap: 28px; font-size: 13px; letter-spacing: 0.08em; }
+  .nav a { color: var(--muted); text-decoration: none; }
+  .nav a:hover { color: var(--fg); }
+
+  /* hero */
+  .hero { padding: 112px 0 104px; }
+  .eyebrow {
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin: 0 0 20px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 6.4vw, 60px);
+    line-height: 1.35;
+    letter-spacing: 0.01em;
     margin: 0;
-    color: var(--accent);
+    font-weight: 800;
   }
-  .tagline {
-    margin: 16px 0 0;
-    font-size: clamp(18px, 3.4vw, 24px);
-    font-weight: 600;
+  .hero .sub { margin: 32px 0 0; max-width: 40em; color: var(--muted); font-size: 16px; }
+  .cta { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 14px 24px; border-radius: 999px;
+    font-weight: 700; font-size: 15px; text-decoration: none;
+    border: 1px solid var(--accent);
   }
-  .tagline span { color: var(--accent); }
-  .lead { margin: 24px 0 0; color: var(--muted); max-width: 36em; }
-  section { padding: 48px 0; border-top: 1px solid var(--line); }
-  h2 {
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 24px;
-    font-weight: 600;
+  .btn.primary { background: var(--accent); color: #fff; }
+  .btn.ghost { color: var(--accent); background: transparent; }
+
+  /* sections */
+  section { padding: 96px 0; border-top: 1px solid var(--line); }
+  .sec-head { margin-bottom: 48px; }
+  .sec-head h2 { font-size: clamp(24px, 3.6vw, 32px); line-height: 1.5; margin: 0; font-weight: 800; }
+  .sec-head p { margin: 16px 0 0; color: var(--muted); max-width: 40em; }
+
+  /* scenes */
+  .scenes { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .scene {
+    margin: 0; background: var(--card); border: 1px solid var(--line);
+    border-left: 4px solid var(--accent); border-radius: 4px 12px 12px 4px;
+    padding: 20px 24px; font-weight: 600;
   }
-  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
+
+  /* services */
+  .services { display: grid; gap: 0 56px; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
+  .service { padding: 32px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 56px 1fr; gap: 0 16px; }
+  .service .num { font-size: 14px; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; padding-top: 4px; }
+  .service h3 { margin: 0 0 8px; font-size: 19px; line-height: 1.6; }
+  .service p { margin: 0; color: var(--muted); }
+
+  /* other business */
+  .biz {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 32px;
   }
-  .card h3 { margin: 0 0 8px; font-size: 20px; }
-  .card p { margin: 0 0 16px; color: var(--muted); flex: 1; }
-  .card .link { font-weight: 600; text-decoration: none; }
-  .card .link:hover { text-decoration: underline; }
-  dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 24px; }
-  dt { color: var(--muted); }
-  dd { margin: 0; overflow-wrap: anywhere; }
-  footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+  .biz h3 { margin: 0 0 4px; font-size: 20px; }
+  .biz p { margin: 0; color: var(--muted); }
+
+  /* about */
+  .info { margin: 0; border-top: 1px solid var(--line); }
+  .info div { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .info dt { color: var(--muted); font-size: 14px; }
+  .info dd { margin: 0; overflow-wrap: anywhere; }
+  .info small { color: var(--muted); }
+
+  /* contact */
+  .contact { background: var(--tint); border-top: none; text-align: center; }
+  .contact .sec-head { margin-bottom: 32px; }
+  .contact .sec-head p { margin-left: auto; margin-right: auto; }
+  .contact .cta { justify-content: center; margin-top: 0; }
+
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 640px) {
+    .nav { display: none; }
+    .hero { padding: 72px 0 72px; }
+    section { padding: 72px 0; }
+    .services { grid-template-columns: 1fr; }
+    .service { grid-template-columns: 44px 1fr; }
+    .info div { grid-template-columns: 1fr; gap: 2px; }
+    .biz { padding: 24px; }
+  }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="hero">
-      <h1 class="logo">GLHF</h1>
-      <p class="tagline"><span>G</span>ood <span>L</span>uck, <span>H</span>ave <span>F</span>un.</p>
-    </header>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#">GLHF</a>
+      <nav class="nav">
+        <a href="#service">SERVICE</a>
+        <a href="#business">BUSINESS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <p class="eyebrow">Technical Advisory</p>
+      <h1>技術顧問</h1>
+      <p class="sub">B2B SaaS・B2C SaaS の両方で CTO を務めてきた経験をもとに、技術選定や設計の相談、開発体制の見直しを支援する。必要に応じて、検証用のプロトタイプも開発する。</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:info@glhf-labs.jp">相談する</a>
+        <a class="btn ghost" href="#service">支援内容を見る</a>
+      </div>
+    </div>
 
     <section>
-      <h2>Business</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>技術顧問</h3>
-          <p>技術選定や設計の相談、開発の進め方・体制の見直し、コードレビューなど、事業の技術面を外部から支援する。必要に応じて、検証用のプロトタイプも開発する。</p>
-          <a class="link" href="mailto:info@glhf-labs.jp">info@glhf-labs.jp →</a>
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Scenes</p>
+          <h2>こんな場面で</h2>
         </div>
-        <div class="card">
-          <h3>あしがらのしかにく</h3>
-          <p>鹿肉のジビエジャーキーの販売。</p>
-          <a class="link" href="https://shikaniku.shop/" target="_blank" rel="noopener">shikaniku.shop →</a>
+        <div class="scenes">
+          <blockquote class="scene">技術の責任者がいない。採用が決まるまで、判断が止まっている</blockquote>
+          <blockquote class="scene">開発会社の提案や見積もりが妥当なのか、判断がつかない</blockquote>
+          <blockquote class="scene">新しい技術を採るべきか、まず小さく試して確かめたい</blockquote>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>About</h2>
-      <dl>
-        <dt>屋号</dt><dd>GLHF</dd>
-        <dt>所在地</dt><dd>神奈川県足柄上郡松田町松田庶子1091-1</dd>
-        <dt>お問い合わせ</dt><dd><a href="mailto:info@glhf-labs.jp">info@glhf-labs.jp</a></dd>
-      </dl>
+    <section id="service">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Service</p>
+          <h2>支援内容</h2>
+          <p>顧問として定期的に相談を受けるほか、必要に応じて設計・実装の現場にも入る。</p>
+        </div>
+        <div class="services">
+          <div class="service">
+            <span class="num">01</span>
+            <div>
+              <h3>技術戦略・技術選定の壁打ち</h3>
+              <p>事業の優先順位と制約から、採る技術、作り方、内製か外注かを整理する。</p>
+            </div>
+          </div>
+          <div class="service">
+            <span class="num">02</span>
+            <div>
+              <h3>設計・コードのレビュー</h3>
+              <p>アーキテクチャ、セキュリティ、コードを第三者の目で確かめ、手戻りの芽を早いうちに摘む。</p>
+            </div>
+          </div>
+          <div class="service">
+            <span class="num">03</span>
+            <div>
+              <h3>開発体制・進め方の見直し</h3>
+              <p>開発フロー、外部パートナーとの分担、採用の要件を整え、チームが自走できる形にする。</p>
+            </div>
+          </div>
+          <div class="service">
+            <span class="num">04</span>
+            <div>
+              <h3>検証用のプロトタイプ開発</h3>
+              <p>机上の検討で決めきれないときは、動くものを作って確かめる。資料で終わらせず、判断を実装へつなげる。</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer>© GLHF</footer>
-  </div>
+    <section id="business">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Business</p>
+          <h2>その他の事業</h2>
+        </div>
+        <div class="biz">
+          <div>
+            <h3>あしがらのしかにく</h3>
+            <p>鹿肉のジビエジャーキーの販売。</p>
+          </div>
+          <a class="btn ghost" href="https://shikaniku.shop/" target="_blank" rel="noopener">shikaniku.shop</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">About</p>
+          <h2>概要</h2>
+        </div>
+        <dl class="info">
+          <div><dt>屋号</dt><dd>GLHF<br><small>Good luck, have fun.</small></dd></div>
+          <div><dt>経歴</dt><dd>B2B SaaS・B2C SaaS の CTO</dd></div>
+          <div><dt>事業内容</dt><dd>技術顧問、ジビエジャーキーの販売</dd></div>
+          <div><dt>所在地</dt><dd>神奈川県足柄上郡松田町松田庶子1091-1</dd></div>
+          <div><dt>お問い合わせ</dt><dd><a href="mailto:info@glhf-labs.jp">info@glhf-labs.jp</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Contact</p>
+          <h2>お問い合わせ</h2>
+          <p>課題が整理できていない段階での相談も受け付ける。</p>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="mailto:info@glhf-labs.jp">info@glhf-labs.jp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© GLHF</div>
+  </footer>
 </body>
 </html>
