@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLHF</title>
+<meta name="description" content="GLHF（Good luck, have fun）は神奈川県足柄上郡松田町の個人事業。ジビエジャーキー「あしがらのしかにく」の販売とアプリ開発を行う。">
+<meta property="og:title" content="GLHF — Good luck, have fun">
+<meta property="og:description" content="ジビエジャーキー「あしがらのしかにく」の販売とアプリ開発を行う個人事業。">
+<meta property="og:url" content="https://glhf-labs.jp/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234e6b3a'/><text x='32' y='42' font-family='sans-serif' font-size='24' font-weight='700' fill='%23ffffff' text-anchor='middle'>GL</text></svg>">
+<style>
+  /* タツマップ（1tsuki/tatsumap site/style.css）と同じ配色 */
+  :root {
+    --fg: #1f2a1a;
+    --muted: #5d6b55;
+    --accent: #4e6b3a;
+    --bg: #f7f8f4;
+    --card: #ffffff;
+    --line: #d9dfd2;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  header.hero { padding: 96px 0 64px; }
+  .logo {
+    font-size: clamp(64px, 16vw, 128px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 0;
+    color: var(--accent);
+  }
+  .tagline {
+    margin: 16px 0 0;
+    font-size: clamp(18px, 3.4vw, 24px);
+    font-weight: 600;
+  }
+  .tagline span { color: var(--accent); }
+  .lead { margin: 24px 0 0; color: var(--muted); max-width: 36em; }
+  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  h2 {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 24px;
+    font-weight: 600;
+  }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 20px; }
+  .card p { margin: 0 0 16px; color: var(--muted); flex: 1; }
+  .card .link { font-weight: 600; text-decoration: none; }
+  .card .link:hover { text-decoration: underline; }
+  dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 24px; }
+  dt { color: var(--muted); }
+  dd { margin: 0; overflow-wrap: anywhere; }
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1 class="logo">GLHF</h1>
+      <p class="tagline"><span>G</span>ood <span>L</span>uck, <span>H</span>ave <span>F</span>un.</p>
+      <p class="lead">屋号の GLHF は、対戦ゲームの始まりに交わす挨拶「Good luck, have fun」から。人生、楽しもうぜ。</p>
+    </header>
+
+    <section>
+      <h2>Business</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>あしがらのしかにく</h3>
+          <p>鹿肉のジビエジャーキーの販売。</p>
+          <a class="link" href="https://shikaniku.shop/" target="_blank" rel="noopener">shikaniku.shop →</a>
+        </div>
+        <div class="card">
+          <h3>アプリ開発</h3>
+          <p>スマートフォンアプリ・Web サービスの企画と開発。ご相談はお問い合わせ先まで。</p>
+          <a class="link" href="mailto:info@glhf-labs.jp">info@glhf-labs.jp →</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>About</h2>
+      <dl>
+        <dt>屋号</dt><dd>GLHF</dd>
+        <dt>所在地</dt><dd>神奈川県足柄上郡松田町松田庶子1091-1</dd>
+        <dt>お問い合わせ</dt><dd><a href="mailto:info@glhf-labs.jp">info@glhf-labs.jp</a></dd>
+      </dl>
+    </section>
+
+    <footer>© GLHF</footer>
+  </div>
+</body>
+</html>
