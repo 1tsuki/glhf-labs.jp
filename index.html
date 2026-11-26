@@ -95,7 +95,10 @@
   .biz + .biz { margin-top: 16px; }
   .biz h3 { margin: 0 0 4px; font-size: 20px; }
   .biz p { margin: 0; color: var(--muted); }
-  .biz-links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .biz-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  /* ストアの公式バッジ。加工せず、高さをそろえて置く（App Store は高さ 40px 以上） */
+  .store-badge { display: block; line-height: 0; }
+  .store-badge img { height: 48px; width: auto; }
 
   /* about */
   .info { margin: 0; border-top: 1px solid var(--line); }
@@ -230,8 +233,8 @@
             <p>巻狩りの猟隊のための位置共有アプリを開発・運営しています。</p>
           </div>
           <div class="biz-links">
-            <a class="btn ghost" href="https://apps.apple.com/jp/app/id6835298767" target="_blank" rel="noopener">App Store</a>
-            <a class="btn ghost" href="https://play.google.com/store/apps/details?id=jp.glhf_labs.tatsumap" target="_blank" rel="noopener">Google Play</a>
+            <a class="store-badge" href="https://apps.apple.com/jp/app/id6835298767" target="_blank" rel="noopener"><img src="assets/app-store-badge-ja.svg" alt="App Store からダウンロード" width="131" height="48"></a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=jp.glhf_labs.tatsumap" target="_blank" rel="noopener"><img src="assets/google-play-badge-ja.png" alt="Google Play で手に入れよう" width="124" height="48"></a>
             <a class="btn ghost" href="https://tatsumap.web.app/" target="_blank" rel="noopener">tatsumap.web.app</a>
           </div>
         </div>
