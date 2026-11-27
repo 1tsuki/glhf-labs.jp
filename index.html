@@ -93,6 +93,8 @@
     background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 32px;
   }
   .biz + .biz { margin-top: 16px; }
+  /* アプリのカードは、幅に関係なくリンクを説明の下に置いてそろえる */
+  .biz.app { flex-direction: column; align-items: flex-start; }
   .biz-head { display: flex; align-items: center; gap: 20px; }
   /* アプリのアイコン（iOS の 60pt@3x、180px）。角丸は iOS のアイコンに近い比率 */
   .app-icon { flex: none; width: 60px; height: 60px; border-radius: 13px; }
@@ -232,7 +234,7 @@
           </div>
           <a class="btn ghost" href="https://shikaniku.shop/" target="_blank" rel="noopener">shikaniku.shop</a>
         </div>
-        <div class="biz">
+        <div class="biz app">
           <div class="biz-head">
             <img class="app-icon" src="assets/tatsumap-icon.png" alt="" width="60" height="60">
             <div>
@@ -246,12 +248,12 @@
             <a class="btn ghost" href="https://tatsumap.web.app/" target="_blank" rel="noopener">tatsumap.web.app</a>
           </div>
         </div>
-        <div class="biz">
+        <div class="biz app">
           <div class="biz-head">
             <img class="app-icon" src="assets/claylens-icon.png" alt="" width="60" height="60">
             <div>
               <h3>ClayLens</h3>
-              <p>トラップ射撃のスコアカードを AI で読み取る<br>記録アプリを開発しています。</p>
+              <p>トラップ射撃のスコアカードを AI で読み取る記録アプリを開発しています。</p>
             </div>
           </div>
           <div class="biz-links">
