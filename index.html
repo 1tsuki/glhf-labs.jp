@@ -96,6 +96,8 @@
   .biz-head { display: flex; align-items: center; gap: 20px; }
   /* アプリのアイコン（iOS の 60pt@3x、180px）。角丸は iOS のアイコンに近い比率 */
   .app-icon { flex: none; width: 60px; height: 60px; border-radius: 13px; }
+  /* 白地のロゴ（あしがらのしかにく）は白いカードに溶けるので、枠線で輪郭を出す */
+  .app-icon.on-white { border: 1px solid var(--line); }
   .biz h3 { margin: 0 0 4px; font-size: 20px; }
   /* 事業名そのものを Web サイトへのリンクにし、外部リンクの矢印（↗）を添える */
   .biz h3 a { color: var(--fg); text-decoration: none; }
@@ -231,9 +233,12 @@
           <h2>その他の事業</h2>
         </div>
         <div class="biz">
-          <div>
-            <h3><a href="https://shikaniku.shop/" target="_blank" rel="noopener">あしがらのしかにく<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
-            <p>鹿肉のジビエジャーキーを販売しています。</p>
+          <div class="biz-head">
+            <img class="app-icon on-white" src="assets/shikaniku-logo.png" alt="" width="60" height="60">
+            <div>
+              <h3><a href="https://shikaniku.shop/" target="_blank" rel="noopener">あしがらのしかにく<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+              <p>鹿肉のジビエジャーキーを販売しています。</p>
+            </div>
           </div>
         </div>
         <div class="biz">
