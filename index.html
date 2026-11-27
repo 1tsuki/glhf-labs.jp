@@ -93,6 +93,9 @@
     background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 32px;
   }
   .biz + .biz { margin-top: 16px; }
+  .biz-head { display: flex; align-items: center; gap: 20px; }
+  /* アプリのアイコン（iOS の 60pt@3x、180px）。角丸は iOS のアイコンに近い比率 */
+  .app-icon { flex: none; width: 60px; height: 60px; border-radius: 13px; }
   .biz h3 { margin: 0 0 4px; font-size: 20px; }
   .biz p { margin: 0; color: var(--muted); }
   .biz-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
@@ -230,9 +233,12 @@
           <a class="btn ghost" href="https://shikaniku.shop/" target="_blank" rel="noopener">shikaniku.shop</a>
         </div>
         <div class="biz">
-          <div>
-            <h3>タツマップ</h3>
-            <p>巻狩りの猟隊のための位置共有アプリを開発・運営しています。</p>
+          <div class="biz-head">
+            <img class="app-icon" src="assets/tatsumap-icon.png" alt="" width="60" height="60">
+            <div>
+              <h3>タツマップ</h3>
+              <p>巻狩りの猟隊のための位置共有アプリを開発・運営しています。</p>
+            </div>
           </div>
           <div class="biz-links">
             <a class="store-badge" href="https://apps.apple.com/jp/app/id6835298767" target="_blank" rel="noopener"><img src="assets/app-store-badge-ja.svg" alt="App Store からダウンロード" width="131" height="48"></a>
@@ -241,9 +247,12 @@
           </div>
         </div>
         <div class="biz">
-          <div>
-            <h3>ClayLens</h3>
-            <p>トラップ射撃のスコアカードを AI で読み取る記録アプリを開発しています。</p>
+          <div class="biz-head">
+            <img class="app-icon" src="assets/claylens-icon.png" alt="" width="60" height="60">
+            <div>
+              <h3>ClayLens</h3>
+              <p>トラップ射撃のスコアカードを AI で読み取る記録アプリを開発しています。</p>
+            </div>
           </div>
           <div class="biz-links">
             <a class="btn ghost" href="https://claylens.web.app/" target="_blank" rel="noopener">claylens.web.app</a>
