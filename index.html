@@ -93,14 +93,17 @@
     background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 32px;
   }
   .biz + .biz { margin-top: 16px; }
-  /* アプリのカードは、幅に関係なくリンクを説明の下に置いてそろえる */
-  .biz.app { flex-direction: column; align-items: flex-start; }
   .biz-head { display: flex; align-items: center; gap: 20px; }
   /* アプリのアイコン（iOS の 60pt@3x、180px）。角丸は iOS のアイコンに近い比率 */
   .app-icon { flex: none; width: 60px; height: 60px; border-radius: 13px; }
   .biz h3 { margin: 0 0 4px; font-size: 20px; }
+  /* 事業名そのものを Web サイトへのリンクにし、外部リンクの矢印（↗）を添える */
+  .biz h3 a { color: var(--fg); text-decoration: none; }
+  .biz h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .biz h3 .ext { width: 0.7em; height: 0.7em; margin-left: 0.3em; vertical-align: 0.05em; color: var(--accent); }
   .biz p { margin: 0; color: var(--muted); }
-  .biz-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  /* ストアのバッジは右寄せ。折り返したときも右に置く */
+  .biz-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px; margin-left: auto; }
   /* ストアの公式バッジ。加工せず、高さをそろえて置く（App Store は高さ 40px 以上） */
   .store-badge { display: block; line-height: 0; }
   .store-badge img { height: 48px; width: auto; }
@@ -229,36 +232,33 @@
         </div>
         <div class="biz">
           <div>
-            <h3>あしがらのしかにく</h3>
+            <h3><a href="https://shikaniku.shop/" target="_blank" rel="noopener">あしがらのしかにく<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
             <p>鹿肉のジビエジャーキーを販売しています。</p>
           </div>
-          <a class="btn ghost" href="https://shikaniku.shop/" target="_blank" rel="noopener">shikaniku.shop</a>
         </div>
-        <div class="biz app">
+        <div class="biz">
           <div class="biz-head">
             <img class="app-icon" src="assets/tatsumap-icon.png" alt="" width="60" height="60">
             <div>
-              <h3>タツマップ</h3>
+              <h3><a href="https://tatsumap.web.app/" target="_blank" rel="noopener">タツマップ<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
               <p>巻狩りの猟隊のための位置共有アプリを開発・運営しています。</p>
             </div>
           </div>
           <div class="biz-links">
             <a class="store-badge" href="https://apps.apple.com/jp/app/id6835298767" target="_blank" rel="noopener"><img src="assets/app-store-badge-ja.svg" alt="App Store からダウンロード" width="131" height="48"></a>
             <a class="store-badge" href="https://play.google.com/store/apps/details?id=jp.glhf_labs.tatsumap" target="_blank" rel="noopener"><img class="google-play" src="assets/google-play-badge-ja.png" alt="Google Play で手に入れよう" width="162" height="63"></a>
-            <a class="btn ghost" href="https://tatsumap.web.app/" target="_blank" rel="noopener">tatsumap.web.app</a>
           </div>
         </div>
-        <div class="biz app">
+        <div class="biz">
           <div class="biz-head">
             <img class="app-icon" src="assets/claylens-icon.png" alt="" width="60" height="60">
             <div>
-              <h3>ClayLens</h3>
+              <h3><a href="https://claylens.web.app/" target="_blank" rel="noopener">ClayLens<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
               <p>トラップ射撃のスコアカードを AI で読み取る記録アプリを開発しています。</p>
             </div>
           </div>
           <div class="biz-links">
             <a class="store-badge" href="https://apps.apple.com/jp/app/id6839875154" target="_blank" rel="noopener"><img src="assets/app-store-badge-ja.svg" alt="App Store からダウンロード" width="131" height="48"></a>
-            <a class="btn ghost" href="https://claylens.web.app/" target="_blank" rel="noopener">claylens.web.app</a>
           </div>
         </div>
       </div>
