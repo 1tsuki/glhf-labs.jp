@@ -73,7 +73,8 @@
   .sec-head small.en { display: block; font-size: 14px; font-weight: 500; color: var(--muted); letter-spacing: 0.06em; }
 
   /* scenes */
-  .scenes { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  /* 場面は4つなので2列×2行に並べる（スマートフォンでは1列） */
+  .scenes { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); }
   .scene {
     margin: 0; background: var(--card); border: 1px solid var(--line);
     border-left: 4px solid var(--accent); border-radius: 4px 12px 12px 4px;
@@ -132,6 +133,7 @@
     .hero { padding: 72px 0 72px; }
     section { padding: 72px 0; }
     .services { grid-template-columns: 1fr; }
+    .scenes { grid-template-columns: 1fr; }
     .service { grid-template-columns: 44px 1fr; }
     .info div { grid-template-columns: 1fr; gap: 2px; }
     .biz { padding: 24px; }
